@@ -1,5 +1,7 @@
-package com.revature.spring.ioc;
+package com.revature.spring.di;
 
-public class SMSService {
-
+public class SMSService implements MessageService {
+    public String getMessage() {
+        return "SMS Message";
+    }
 }

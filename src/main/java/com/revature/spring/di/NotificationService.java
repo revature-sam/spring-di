@@ -2,12 +2,18 @@ package com.revature.spring.di;
 
 public class NotificationService {
 
-    private EmailService emailService;
-    public NotificationService(EmailService emailService) {
-        this.emailService = emailService;
+    private MessageService service;
+
+    // Empty constructor for setter-based injection
+    public NotificationService() {
+    }
+
+    // setter-based dependency injection
+    public void setNotificationService(MessageService service) {
+        this.service = service;
     }
 
     public void sendNotification() {
-        System.out.println("Sending notification: " + emailService.getMessage());
+        System.out.println("Sending notification: " + service.getMessage());
     }
 }

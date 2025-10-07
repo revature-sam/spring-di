@@ -5,11 +5,12 @@
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Example bean definition -->
-    
-    <!-- Setter Injection -->
-    <bean id="messageService" class="com.revature.spring.ioc.MessageService">
-        <property name="message" value="Hello, Spring IoC!"/>
+    <!-- Bean definitions -->
+    <bean id="emailService" class="com.revature.spring.di.EmailService"/>
+    <bean id="smsService" class="com.revature.spring.di.SMSService"/>
+
+    <bean id="notificationService" class="com.revature.spring.di.NotificationService">
+        <property name="notificationService" ref="emailService"/>
     </bean>
 
 </beans>
